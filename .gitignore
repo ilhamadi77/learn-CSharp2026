@@ -200,6 +200,9 @@ PublishScripts/
 csx/
 *.build.csdef
 
+# pacakages remove
+**/packages/
+
 # Microsoft Azure Emulator
 ecf/
 rcf/
