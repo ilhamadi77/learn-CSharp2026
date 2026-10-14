@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+
+    var denominations = new List<int>() { 1000, 500, 100, 50, 10, 5, 1 };
+    var currencyCount = new List<int>();
+
+    if (ViewBag.Amount> 0)
+    {
+        var tempAmount = ViewBag.Amount;
+
+    foreach (var deno in denominations)
+                {
+            var currCount = Convert.ToInt32(tempAmount/ deno);
+            currencyCount.Add(currCount);
+
+            tempAmount = tempAmount - (currCount * deno);
+
+                }
+    }
+}
+
+<h2>Products</h2>
+<div class="container-fluid">
+    <h1>Currency Denomation</h1>
+    <hr />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Denomination</th>
+                <th>Count</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < currencyCount.Count; i++)
+            {
+                <tr>
+                    <td>@denominations[i]</td>
+                    <td>@currencyCount[i]</td>
+                    <td>@(denominations[i] * currencyCount[i])</td>
+                </tr>
+
+            }
+            <tr>
+                <td colspan="2">Total Curreny</td>
+                <td>@ViewBag.Amount</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
