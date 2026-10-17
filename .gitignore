@@ -202,7 +202,8 @@ csx/
 
 # pacakages remove
 **/packages/
-
+**/bin/
+**/App_Data/
 # Microsoft Azure Emulator
 ecf/
 rcf/
