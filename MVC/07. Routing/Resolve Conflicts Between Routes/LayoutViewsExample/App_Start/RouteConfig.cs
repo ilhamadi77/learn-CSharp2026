@@ -19,7 +19,7 @@ namespace LayoutViewsExample
                 name: "products",
                 url: "{controller}/{action}/{productName}",
                 defaults: new { },
-                constraints: new { productName = @"^[A-Za-z]*$"}
+                constraints: new { productName = @"^[A-Za-z]*$" }
             );
 
             routes.MapRoute(
